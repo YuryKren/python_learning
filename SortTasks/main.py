@@ -1,20 +1,25 @@
-array = [8, -4, 9, 1, 5, 3, 7, 2, -3, 4]
+# online sorting
 
-mem_value = array[0]
+from random import randint
 
-for i, num in enumerate(array):
-    if i == len(array) - 2:
-        break
-    elif num > array[i+1]:
+array = []
+lght = 100
+while lght != 0:
+    array.append(randint(-100, 1000))
+    lght -= 1
+
+print(array)
+
+
+for i in range(len(array)-1):
+    if array[i] > array[i+1]:
         mem_value = array[i+1]
-        array[i+1] = num
-        if i == 0:
-            array[i] = mem_value
-        for j in range(i, 0, -1):
-            if array[j-1] > mem_value:
-                array[j] = array[j-1]
+        array[i+1] = array[i]
+        for j in range(i+1):
+            if mem_value >= array[j]:
+                continue
             else:
-                array[j] = mem_value
-                break
+                array[j], mem_value = mem_value, array[j]
+    
 
 print(array)
