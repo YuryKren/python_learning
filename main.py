@@ -1,4 +1,6 @@
 # online sorting
+from random import randint
+
 
 def online_sort(lst: list) -> list:
     # This function sorts the resulting list from min to max.
@@ -17,21 +19,13 @@ def online_sort(lst: list) -> list:
                 else:
                     lst[j], mem_value = mem_value, lst[j]
     return lst
-    
-
-def create_list(n: int) -> list:
-    lst = []
-    while n != 0:
-        lst.append(int(input('Enter the nomber: ')))
-        n -= 1
-    return lst
 
 
-def main():
-    N = int(input('The list lenght should be: '))
-    lst = create_list(N)
-    print(f'The create list: \n{lst}')
-    print(f'The sorted list: \n{online_sort(lst)}')
+array = []
+lght = 15
 
-
-main()
+while lght != 0:
+    array.append(randint(-5, 50))
+    lght -= 1
+print(array)
+print(online_sort(array))
