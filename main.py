@@ -1,7 +1,7 @@
 # merge sorted lists
 
 array = []
-array_1 = [2, 4, 7, 9, 12, 15, 16, 21]
+array_1 = [2, 4, 7, 9, 12, 15, 16, 21, 23, 25]
 array_2 = [1, 4, 5, 11, 17, 18, 20]
 
 print(array_1, f'\n{array_2}')
